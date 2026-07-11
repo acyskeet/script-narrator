@@ -1,0 +1,19 @@
+# Python virtual environment
+.venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Generated audio
+*.mp3
+*.wav
+output/
+samples/
+
+# Environment variables and secrets
+.env
+
+# Editor-specific files
+.vscode/
