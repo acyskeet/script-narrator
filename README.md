@@ -40,7 +40,7 @@ The project has currently been tested on Fedora Linux with Python 3.14.
 Clone the repository:
 
 ```bash
-git clone YOUR_REPOSITORY_URL
+git https://github.com/acyskeet/script-narrator
 cd script-narrator
 ```
 
