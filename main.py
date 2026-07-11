@@ -1,20 +1,6 @@
 import asyncio
 
-import edge_tts
-
-
-VOICE = "en-US-AndrewNeural"
-OUTPUT_FILE = "narration.mp3"
-
-
-async def generate_speech(text: str) -> None:
-    communicate = edge_tts.Communicate(
-        text=text,
-        voice=VOICE,
-    )
-
-    await communicate.save(OUTPUT_FILE)
-    print(f"Saved narration to {OUTPUT_FILE}")
+from src.script_narrator.edge_engine import generate_speech
 
 
 async def main() -> None:
@@ -23,7 +9,12 @@ async def main() -> None:
         "Today, I am building my own script narration application."
     )
 
-    await generate_speech(script)
+    output_path = await generate_speech(
+        text=script,
+        output_file="output/narration.mp3",
+    )
+
+    print(f"Narration saved to: {output_path}")
 
 
 if __name__ == "__main__":
